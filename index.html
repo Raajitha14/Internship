@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Google Search</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="../static/css/index.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com/">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-md">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./advancesearch.html">Advanced Search</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./loginpage.html">Login</a>
+                    </li>
+                </ul>
+        </nav>
+        
+        <div class="d-flex align-items-center min-vh-100">
+           <div class="container">
+                <div class="d-flex justify-content-center itembox">
+                    <form class="form" action="" >
+                    <img class="imagej" src="./coding_key.png">
+                    <input class="searchbox base d-flex justify-content-center" type="url" placeholder="Enter the url" name="q" id="url" required>                 
+                    <table>
+                    <tr>
+                    <td><button type="button" onclick="start_scrape(event)">Click me</button></td>
+                    <h3>No : 7259081307</h3>
+                    
+                    </tr>
+                    </table>
+                    </form>     
+                </div>      
+            </div>
+        </div> 
+        <script>
+            function start_scrape(event)
+            {
+                event.preventDefault()
+                console.log("in scrape")
+                const input_url=document.getElementById('url').value
+                console.log(input_url)
+                fetch("http://127.0.0.1:5000/scrape", {
+                method: "POST",
+                body: JSON.stringify({
+                    url:input_url
+
+  })
+ 
+})
+  .then((response) => response.text())
+  .then((json) => {console.log(json);alert(json)})
+  .catch(err=>{console.log(err)})
+            }
+        </script>     
+    </body>
+</html>

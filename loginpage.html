@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/loginpage.css">
+    <title>Login page using html</title>
+
+</head>
+<body>
+    <h1>Login page</h1>
+    <form action="" >
+        <!-- Headings for the form -->
+        <div class="headingsContainer">
+            <h3>Sign in</h3>
+            <p>Sign in with your username and password</p>
+
+        </div>
+        <!-- Main container for all inputs -->
+        <div class="mainContainer">
+            <label for="username">Username</label>
+            <input type="text" placeholder="Enter Username" name="username" required>
+
+            <br><br>
+
+            <label for="paswrd">Password</label>
+            <input type="password" placeholder="Enter Password" name="paswrd" required>
+
+            <div class="subcontainer">
+                <label>
+                    <input type="checkbox" checked="checked" name="remember">Remember me
+                </label>
+                <p class="forgotpassword"><a href="#">Forgot password?</a></p>
+            </div>
+
+
+            <br>
+            
+            <button type="submit">Login</button>
+            
+            
+            <p class="register">Not a Member?<a href="#">Register here!</a></p>
+
+
+        </div>
+    </form>
+    
+</body>
+</html>
